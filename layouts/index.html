@@ -1,0 +1,30 @@
+{{ define "title" }}
+  {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+  <main class="container-lg" aria-role="main">
+    <h1>The main</h1>
+    <p>Content...</p>
+  </main>
+  <button class="openbtn d-none d-md-flex flex-column" onclick="openNav()">
+    <img alt="" width="30" src="assets/img/white-letter-block-toy-pngrepo-com.png">
+    >>
+  </button>
+{{ end }}
+
+{{ define "script" }}
+<script type="text/javascript">
+  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+  function openNav() {
+    $(".sidebar").addClass("open");
+    $("#main").addClass("sidebar-open");
+  }
+
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    $(".sidebar").removeClass("open");
+    $("#main").removeClass("sidebar-open");
+  }
+</script>
+{{ end }}

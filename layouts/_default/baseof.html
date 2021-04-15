@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{"css/styles.css" | relURL }}">
+    <link rel="icon" type="image/png" href="assets/img/letter-block-toy-pngrepo-com.png">
+  </head>
+  <body>
+    <div class="container-fluid px-0">
+      {{ partial "top-nav" . }}
+      <div id="main" class="sidebar-open">
+        {{ partial "nav" . }}
+
+        {{ block "main" . }} {{/* No default main */}} {{ end }}
+
+        {{ partial "footer-nav" . }}
+        {{ partial "footer" . }}
+      </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script type="text/javascript" src={{"plugins/bootstrap-5.0.0-beta1-dist/js/bootstrap.js" | relURL }}></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src={{"plugins/jquery/jquery-3.5.1.js" | relURL }}></script>
+    <!-- Custom JS -->
+    {{ block "script" . }} {{/* No default script */}} {{end}}
+  </body>
+</html>
