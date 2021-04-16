@@ -1,16 +1,50 @@
-{{ define "title" }}
-  {{ .Site.Title }}
-{{ end }}
-
 {{ define "main" }}
-  <main class="container-lg" aria-role="main">
-    <h1>The main</h1>
-    <p>Content...</p>
-  </main>
+  <div class="hero container-fluid px-0 text-light">
+    <!-- The video -->
+    {{ $video := .Resources.GetMatch "video" }}
+    <video autoplay muted>
+      <source src="{{ $video.Permalink }}" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <div class="row justify-content-center mx-0 py-5">
+        <div class="col-md-10 my-5">
+          <div class="row align-items-center">
+            <div class="col-xl-7 mt-5 px-3 px-md-1">
+              <div class="text-light">
+                <h1 class="heading">{{ .Params.heading }}</h1>
+                <h2 class="fs-4 w-75">{{ .Params.subheading }}</h2>
+                <a href="#about" class="btn cta fs-5">Get to know us better</a>
+              </div>
+            </div>
+            <div class="col-xl-5 d-none d-md-block text-light px-1 mt-2 mt-xl-0">
+              <div class="reservation px-1 px-xl-3 pt-5 pb-2">
+                <h2>Make a Reservation</h2>
+                <form class="d-flex flex-wrap justify-content-between">
+                  <label class="d-flex flex-column w-100">
+                    When?
+                    <input type="date" name="date" placeholder="Pick a date" class="w-100 mb-3 py-1">
+                  </label>
+                  <label class="d-flex flex-column w-100">
+                    Name
+                    <input type="text" name="name" placeholder="Name" class="w-100 mb-3 py-1">
+                  </label>
+                  <label class="d-flex flex-column w-100">
+                    Email address
+                    <input type="text" name="email" placeholder="Email" class="w-100 mb-3 py-1">
+                  </label>
+                  <button type="submit" class="btn text-dark w-25 px-2 py-1">Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <button class="openbtn d-none d-md-flex flex-column" onclick="openNav()">
-    <img alt="" width="30" src="assets/img/white-letter-block-toy-pngrepo-com.png">
-    >>
+    <img alt="" width="30" src="assets/img/white-letter-block-toy-pngrepo-com.png">>>
   </button>
+  {{ partial "services" . }}
 {{ end }}
 
 {{ define "script" }}
