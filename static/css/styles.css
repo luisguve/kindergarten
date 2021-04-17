@@ -23,7 +23,7 @@
 }
 
 .navbar {
-  background-color: var(--brand-primary-tr);
+  background-color: rgba(240,240,240,0.8);
 }
 
 .topnav, .sidebar {
