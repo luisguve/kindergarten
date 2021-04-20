@@ -154,8 +154,7 @@ footer {
 }
 
 .reservation {
-  background: rgba(0,0,0,0.5);
-  border-radius: 5px;
+  background: #6b475e;
 }
 
 .reservation form button {
@@ -213,6 +212,10 @@ a.link:hover {
   transition: margin-left .5s; /* If you want a transition effect */
 }
 @media screen and (min-width: 768px) {
+  .reservation {
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+  }
   .sidebar.open {
     width: 250px;
   }
