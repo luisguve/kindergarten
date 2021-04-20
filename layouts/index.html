@@ -2,38 +2,73 @@
   <div class="hero container-fluid px-0 text-light">
     <!-- The video -->
     {{ $video := .Resources.GetMatch "video" }}
-    <video autoplay muted>
+    <video muted>
       <source src="{{ $video.Permalink }}" type="video/mp4">
     </video>
     <div class="overlay">
-      <div class="row justify-content-center mx-0 py-5">
-        <div class="col-md-10 my-5">
-          <div class="row align-items-center">
-            <div class="col-xl-7 mt-5 px-3 px-md-1">
-              <div class="text-light">
-                <h1 class="heading me-xl-3">{{ .Params.heading }}</h1>
-                <h2 class="fs-4 w-75">{{ .Params.subheading }}</h2>
-                <a href="#about" class="btn cta fs-5">Get to know us better</a>
+      <!-- Desktop navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark text-uppercase pt-0 pt-md-1 pb-0 d-none d-md-flex desktop">
+        <div class="container-fluid justify-content-center px-0">
+          <div class="navbar-info d-md-none w-100 align-items-center d-flex justify-content-between px-3 py-1">
+            <a href="#" class="navbar-brand logo-container text-dark text-capitalize d-flex align-items-center">
+              <img alt="" width="30" class="d-inline-block align-text-top me-2" src="assets/img/letter-block-toy-pngrepo-com.png">
+              The kindergarten
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100 justify-content-center ps-3">
+              <li class="nav-item">
+                <a class="nav-link text-light text-capitalize active" aria-current="page" href="#">home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light text-capitalize" href="#">about us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light text-capitalize" href="#">services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light text-capitalize" href="#">gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light text-capitalize" href="#">contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="content">
+        <div class="row justify-content-center mx-0 py-2 py-xl-5">
+          <div class="col-md-10 my-5">
+            <div class="row flex-column flex-xl-row justify-content-center">
+              <div class="col-md-10 col-lg-8 col-xl-7 mt-5 px-3 px-md-1">
+                <div class="text-light">
+                  <h1 class="heading me-xl-3">{{ .Params.heading }}</h1>
+                  <h2 class="subheading fs-5 w-75 my-3">{{ .Params.subheading }}</h2>
+                  <a href="#about" class="btn cta fs-5">Get to know us better</a>
+                </div>
               </div>
-            </div>
-            <div class="col-xl-5 d-none d-md-block text-light px-1 mt-2 mt-xl-0">
-              <div class="reservation px-1 px-xl-3 pt-5 pb-2">
-                <h2>Make a Reservation</h2>
-                <form class="d-flex flex-wrap justify-content-between">
-                  <label class="d-flex flex-column w-100">
-                    When?
-                    <input type="date" name="date" placeholder="Pick a date" class="w-100 mb-3 py-1">
-                  </label>
-                  <label class="d-flex flex-column w-100">
-                    Name
-                    <input type="text" name="name" placeholder="Name" class="w-100 mb-3 py-1">
-                  </label>
-                  <label class="d-flex flex-column w-100">
-                    Email address
-                    <input type="text" name="email" placeholder="Email" class="w-100 mb-3 py-1">
-                  </label>
-                  <button type="submit" class="btn text-dark w-25 px-2 py-1">Send</button>
-                </form>
+              <div class="col-md-10 col-lg-8 col-xl-5 d-none d-md-block text-light px-1 mt-4 mt-md-3 mt-xl-0 align-self-end">
+                <div class="reservation px-1 px-xl-3 pt-2 pt-xl-5 pb-2">
+                  <h2 class="text-center text-xl-start">Make a Reservation</h2>
+                  <form class="d-flex flex-wrap justify-content-between">
+                    <label class="d-flex flex-column w-100">
+                      When?
+                      <input type="date" name="date" placeholder="Pick a date" class="w-100 mb-3 py-1">
+                    </label>
+                    <label class="d-flex flex-column w-100">
+                      Name
+                      <input type="text" name="name" placeholder="Name" class="w-100 mb-3 py-1">
+                    </label>
+                    <label class="d-flex flex-column w-100">
+                      Email address
+                      <input type="text" name="email" placeholder="Email" class="w-100 mb-3 py-1">
+                    </label>
+                    <button type="submit" class="btn text-light w-25 px-2 py-1">Send</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -53,12 +88,17 @@
   function openNav() {
     $(".sidebar").addClass("open");
     $("#main").addClass("sidebar-open");
+    $("nav.desktop").removeClass("vw-100");
   }
 
   /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
   function closeNav() {
     $(".sidebar").removeClass("open");
     $("#main").removeClass("sidebar-open");
+    $("nav.desktop").addClass("vw-100");
   }
+  $(window).scroll(function() {
+    $("nav.desktop").toggleClass("scrolled", $(this).scrollTop() > $(window).height() * 0.50);
+  })
 </script>
 {{ end }}

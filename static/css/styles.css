@@ -1,13 +1,14 @@
 :root {
-  --brand-primary: #d2f76d;
-  --brand-primary-tr: #d2f76db3;
-  --brand-primary-darker: #819642;
-  --brand-secondary: #8ef76d;
-  --brand-secondary-darker: #325225;
-  --brand-tertiary: rgb(20, 77, 67);
-  --brand-tertiary-overlay: rgba(20, 77, 67, 0.6);
-  --brand-fourth: #6db0f7;
-  --brand-fourth-lighter: #5ce4ff;
+  --primary-1: #6CD4FF;
+  --primary-1-d: #033F63;
+  --primary-1-dd: #001f33;
+  --primary-2: #8B80F9;
+  --secondary: #EDF7F6;
+  --accent-1: #CFB1B7;
+  --accent-1-d: #ffe6eb;
+  --accent-2: #83858C;
+  --accent-2-d: #505258;
+  --accent-2-b: #D2D3D5;
   --brand-title-font: "Kids Rock";
   --brand-text-font: "Roboto";
 }
@@ -23,11 +24,17 @@
 }
 
 .navbar {
-  background-color: rgba(240,240,240,0.8);
+  background-color: rgba(0,0,0,0);
+}
+
+.navbar.scrolled {
+  position: fixed;
+  top: 0;
+  background: rgba(0,0,0,0.9)
 }
 
 .topnav, .sidebar {
-  background-color: var(--brand-secondary);
+  background-color: var(--secondary);
 }
 
 body {
@@ -38,12 +45,20 @@ body {
   font-family: var(--brand-title-font)!important;
 }
 
+.heading {
+  color: var(--accent-1-d);
+}
+
+.subheading {
+  color: #F7F7F8;
+}
+
 .footer-nav {
-  background-color: var(--brand-primary-darker);
+  background-color: var(--primary-1-d);
 }
 
 footer {
-  background-color: var(--brand-secondary-darker);
+  background-color: var(--primary-1-dd);
 }
 
 .logo-container {
@@ -122,12 +137,15 @@ footer {
 }
 
 .hero .overlay {
+  background: rgba(47, 55, 74, 0.6);
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.hero .overlay .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(47, 55, 74, 0.6);
-  position: relative;
-  z-index: 1;
 }
 
 .reservation {
@@ -136,19 +154,19 @@ footer {
 }
 
 .reservation form button {
-  background: var(--brand-fourth-lighter);
+  background: var(--accent-2);
 }
 
 .reservation form button:hover {
-  background: var(--brand-fourth);
+  background: var(--accent-2-d);
 }
 
 .btn.cta {
-  background: var(--brand-primary);
+  background: var(--accent-1-d);
 }
 
 .btn.cta:hover {
-  background: var(--brand-primary-darker);
+  background: var(--accent-1);
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -162,7 +180,19 @@ footer {
   #main.sidebar-open {
     margin-left: 250px;
   }
+  .navbar.scrolled {
+    width: calc(100vw - 250px);
+  }
 }
+@media screen and (min-width: 1200px) {
+  .sidebar.open {
+    width: 21vw;
+  }
+  #main.sidebar-open {
+    margin-left: 21vw;
+  }
+}
+
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
