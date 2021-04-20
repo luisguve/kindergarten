@@ -2,11 +2,28 @@
   <div class="row justify-content-center mx-0 py-5">
     <div class="col-md-10 my-5">
       <div class="row">
-        <div class="col-xl-7">
-          <h1>{{.Params.services.heading}}</h1>
+        <div class="col-xl-7 pe-xl-4 mb-5 mb-xl-0">
+          <h1 class="mb-5 mb-lg-4">{{.Params.services.heading}}</h1>
+          <div class="activities-grid mb-2">
+          {{ range $idx, $rsc := .Resources.Match "activity*" }}
+          {{ $image := $rsc.Resize "400x" }}
+            <div class="activity item-{{$idx}} mb-4 mb-md-0 d-flex flex-column-reverse d-lg-block">
+              <img src="{{ $image.Permalink }}" class="img-fluid">
+              <div class="overlay">
+                <div class="content w-100">
+                  <h1 class="fs-5 mb-1">{{$rsc.Title}}</h1>
+                  <p class="small mb-1">{{$rsc.Params.desc}}</p>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+          </div>
+          <a href="/activities" class="link">See more</a>
         </div>
         <div class="col-xl-5">
-          <h1>{{.Params.about.heading}}</h1>
+          <h1 class="mb-lg-4">{{.Params.about.heading}}</h1>
+          <p class="fs-5 mb-2">{{.Params.about.content}}</p>
+          <a href="/about" class="link">Read more about us</a>
         </div>
       </div>
     </div>

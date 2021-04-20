@@ -5,7 +5,8 @@
   --primary-2: #8B80F9;
   --secondary: #EDF7F6;
   --accent-1: #CFB1B7;
-  --accent-1-d: #ffe6eb;
+  --accent-1-b: #ffe6eb;
+  --accent-1-d: #ec5153;
   --accent-2: #83858C;
   --accent-2-d: #505258;
   --accent-2-b: #D2D3D5;
@@ -50,7 +51,7 @@ body {
 }
 
 .heading {
-  color: var(--accent-1-d);
+  color: var(--accent-1-b);
 }
 
 .subheading {
@@ -166,11 +167,45 @@ footer {
 }
 
 .btn.cta {
-  background: var(--accent-1-d);
+  background: var(--accent-1-b);
 }
 
 .btn.cta:hover {
   background: var(--accent-1);
+}
+
+#about {
+  background: url(/assets/img/lunares.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#about>.row {
+  background: rgba(240,240,240,0.95)
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 5px;
+}
+
+.activity {
+  position: relative;
+}
+
+a.link {
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--accent-1-d);
+}
+a.link:hover {
+  background-color: var(--accent-1);
+  color: #000;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -187,6 +222,62 @@ footer {
   .navbar.scrolled {
     width: calc(100vw - 250px);
   }
+  .activities-grid.sidebar-closed {
+    /*There is more space; adjust structure of grid*/
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .activities-grid.sidebar-closed .item-1 {
+    grid-row: 1 / span 2;
+    grid-column: 2 / 3;
+  }
+  .activities-grid .content h1 {
+    margin-top: 15px;
+  }
+  .activities-grid.sidebar-closed .content h1 {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 992px) {
+  .activities-grid {
+    /*There is more space; adjust structure of grid*/
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .activities-grid .item-1 {
+    grid-row: 1 / span 2;
+    grid-column: 2 / 3;
+  }
+  .activity img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  .activity .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  .activity:hover .overlay {
+    opacity: 1;
+  }
+  .activity .content {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 @media screen and (min-width: 1200px) {
   .sidebar.open {
@@ -196,7 +287,6 @@ footer {
     margin-left: 21vw;
   }
 }
-
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
