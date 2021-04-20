@@ -9,6 +9,14 @@ services:
 about:
   heading: About us
   content: We are professionals and passionate about teaching the little ones the fundamental scholar concepts and helping them to give their first steps toward developing their creativity and vision about the life.
+wwwu:
+  heading: The benefits of our kindergarten
+  content: We are professionals and passionate about teaching the little ones the fundamental scholar concepts and helping them to give their first steps toward developing their creativity and vision about the life.
+  benefits:
+    - We provide <span class="accent">safety</span>
+    - Our environment facilitates <span class="accent">learning</span>
+    - We are <span class="accent">professional</span>
+    - We are <span class="accent">passionate</span> about teaching
 resources:
   - name: video
     src: Pexels Videos 1580507.mp4
@@ -27,5 +35,23 @@ resources:
     src: act-pixabay-159579.jpg
     params:
       desc: "This is an activity"
+  - name: benefit1
+    title: Safety
+    src: pexels-skitterphoto-wooden-letters.jpg
+    params:
+      desc: "This is an activity"
+  - name: benefit2
+    title: Learning
+    src: pexels-pixabay-school-supplies.jpg
+    params:
+      desc: "This is an activity"
+  - name: benefit3
+    title: Colouring
+    src: pexels-lukas-296301.jpg
+    params:
+      desc: "This is an activity"
+  - name: carousel1
+    title: title1
+    src: act-lukas-soccer.jpg
 ---
 

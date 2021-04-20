@@ -1,8 +1,8 @@
 <main aria-role="main" id="about">
   <div class="row justify-content-center mx-0 py-5">
     <div class="col-md-10 my-5">
-      <div class="row">
-        <div class="col-xl-7 pe-xl-4 mb-5 mb-xl-0">
+      <div class="row justify-content-between">
+        <div class="col-lg-6 pe-xl-4 mb-5 mb-xl-0">
           <h1 class="mb-5 mb-lg-4">{{.Params.services.heading}}</h1>
           <div class="activities-grid mb-2">
           {{ range $idx, $rsc := .Resources.Match "activity*" }}
@@ -20,7 +20,7 @@
           </div>
           <a href="/activities" class="link">See more</a>
         </div>
-        <div class="col-xl-5">
+        <div class="col-lg-5">
           <h1 class="mb-lg-4">{{.Params.about.heading}}</h1>
           <p class="fs-5 mb-2">{{.Params.about.content}}</p>
           <a href="/about" class="link">Read more about us</a>

@@ -102,6 +102,8 @@
     <img alt="" width="30" src="assets/img/white-letter-block-toy-pngrepo-com.png">>>
   </button>
   {{ partial "services" . }}
+
+  {{ partial "wwwu" . }} {{/* Why work with us? */}}
 {{ end }}
 
 {{ define "script" }}
@@ -112,6 +114,7 @@
     $("#main").addClass("sidebar-open");
     $("nav.desktop").removeClass("vw-100");
     $(".activities-grid").removeClass("sidebar-closed");
+    $(".benefits-grid").removeClass("sidebar-closed");
   }
 
   /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
@@ -120,6 +123,7 @@
     $("#main").removeClass("sidebar-open");
     $("nav.desktop").addClass("vw-100");
     $(".activities-grid").addClass("sidebar-closed");
+    $(".benefits-grid").addClass("sidebar-closed");
   }
   $(window).scroll(function() {
     $("nav.desktop").toggleClass("scrolled", $(this).scrollTop() > $(window).height() * 0.50);

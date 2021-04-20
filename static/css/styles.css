@@ -173,7 +173,7 @@ footer {
   background: var(--accent-1);
 }
 
-#about {
+#wwwu {
   background: url(/assets/img/lunares.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -181,8 +181,12 @@ footer {
   background-position: center;
 }
 
-#about>.row {
-  background: rgba(240,240,240,0.95)
+#wwwu>.row {
+  background: rgba(255,255,255,0.95)
+}
+
+#wwwu ul {
+  list-style-type: none;
 }
 
 .activities-grid {
@@ -191,8 +195,14 @@ footer {
   grid-template-rows: 1fr;
   grid-gap: 5px;
 }
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 5px;
+}
 
-.activity {
+.activity, .benefit {
   position: relative;
 }
 
@@ -210,6 +220,10 @@ a.link:hover {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s; /* If you want a transition effect */
+}
+.accent {
+  color: var(--accent-1-d);
+  font-weight: bold;
 }
 @media screen and (min-width: 768px) {
   .reservation {
@@ -230,14 +244,25 @@ a.link:hover {
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, 1fr);
   }
+  .benefits-grid.sidebar-closed {
+    /*There is more space; adjust structure of grid*/
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 0.7fr, 1fr;
+  }
   .activities-grid.sidebar-closed .item-1 {
     grid-row: 1 / span 2;
     grid-column: 2 / 3;
   }
-  .activities-grid .content h1 {
+  .benefits-grid.sidebar-closed .item-2 {
+    grid-row: 2 / 3;
+    grid-column: 1 / span 2;
+  }
+  .activities-grid .content h1,
+  .benefits-grid .content h1 {
     margin-top: 15px;
   }
-  .activities-grid.sidebar-closed .content h1 {
+  .activities-grid.sidebar-closed .content h1,
+  .benefits-grid.sidebar-closed .content h1 {
     margin-top: 0;
   }
 }
@@ -247,16 +272,25 @@ a.link:hover {
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, 1fr);
   }
+  .benefits-grid {
+    /*There is more space; adjust structure of grid*/
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 0.7fr, 1fr;
+  }
   .activities-grid .item-1 {
     grid-row: 1 / span 2;
     grid-column: 2 / 3;
   }
-  .activity img {
+  .benefits-grid .item-2 {
+    grid-row: 2 / 3;
+    grid-column: 1 / span 2;
+  }
+  .activity img, .benefit img {
     object-fit: cover;
     height: 100%;
     width: 100%;
   }
-  .activity .overlay {
+  .activity .overlay, .benefit .overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -268,10 +302,13 @@ a.link:hover {
     transition: .5s ease;
     background-color: #008CBA;
   }
-  .activity:hover .overlay {
+  .benefit .overlay {
+    background-color: var(--accent-1);
+  }
+  .activity:hover .overlay, .benefit:hover .overlay {
     opacity: 1;
   }
-  .activity .content {
+  .activity .content, .benefit .content {
     color: white;
     position: absolute;
     top: 50%;
@@ -280,6 +317,9 @@ a.link:hover {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+  }
+  .benefit .content {
+    color: navy;
   }
 }
 @media screen and (min-width: 1200px) {
