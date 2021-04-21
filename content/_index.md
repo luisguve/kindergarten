@@ -50,8 +50,5 @@ resources:
     src: pexels-lukas-296301.jpg
     params:
       desc: "This is an activity"
-  - name: carousel1
-    title: title1
-    src: act-lukas-soccer.jpg
 ---
 
