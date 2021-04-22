@@ -1,1 +1,4 @@
 resources
+public
+# Local Netlify folder
+.netlify
