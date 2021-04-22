@@ -19,7 +19,7 @@ wwwu:
     - We are <span class="accent">passionate</span> about teaching
 resources:
   - name: video
-    src: Pexels Videos 1580507.mp4
+    src: pexels-video-1580507.mp4
   - name: activity1
     title: Sports
     src: act-lukas-soccer.jpg
