@@ -16,9 +16,9 @@
         <div class="col-lg-5">
           <div class="benefits-grid mb-2">
             {{ range $idx, $rsc := .Resources.Match "benefit*" }}
-            {{ $image := $rsc.Resize "600x" }}
+            {{/* $image := $rsc.Resize "600x" */}}
             <div class="benefit item-{{$idx}} mb-4 mb-md-0 d-flex flex-column-reverse d-lg-block">
-              <img src="{{ $image.Permalink }}" class="img-fluid">
+              <img src="{{ $rsc.Permalink }}nf_resize=fit&w=600" class="img-fluid">
               <div class="overlay">
                 <div class="content w-100">
                   <h1 class="fs-5 mb-1">{{$rsc.Title}}</h1>

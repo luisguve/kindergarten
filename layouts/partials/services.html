@@ -6,9 +6,9 @@
           <h1 class="mb-5 mb-lg-4">{{.Params.services.heading}}</h1>
           <div class="activities-grid mb-2">
           {{ range $idx, $rsc := .Resources.Match "activity*" }}
-          {{ $image := $rsc.Resize "400x" }}
+          {{/* $image := $rsc.Resize "400x" */}}
             <div class="activity item-{{$idx}} mb-4 mb-md-0 d-flex flex-column-reverse d-lg-block">
-              <img src="{{ $image.Permalink }}" class="img-fluid">
+              <img src="{{ $rsc.Permalink }}?nf_resize=fit&w=400" class="img-fluid">
               <div class="overlay">
                 <div class="content w-100">
                   <h1 class="fs-5 mb-1">{{$rsc.Title}}</h1>
