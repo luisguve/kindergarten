@@ -3,7 +3,7 @@
     <!-- The video -->
     {{ $video := .Resources.GetMatch "video" }}
     <video muted>
-      <source src="/.netlify/large-media/{{ $video.RelPermalink }}" type="video/mp4">
+      <source src="/.netlify/large-media{{ $video.RelPermalink }}" type="video/mp4">
     </video>
     <div class="overlay">
       <!-- Desktop navbar -->
@@ -11,7 +11,7 @@
         <div class="container-fluid justify-content-center px-0">
           <div class="navbar-info d-md-none w-100 align-items-center d-flex justify-content-between px-3 py-1">
             <a href="#" class="navbar-brand logo-container text-dark text-capitalize d-flex align-items-center">
-              <img alt="" width="30" class="d-inline-block align-text-top me-2" src="assets/img/letter-block-toy-pngrepo-com.png">
+              <img alt="" width="30" class="d-inline-block align-text-top me-2" src="{{ .netlify/large-media/assets/img/letter-block-toy-pngrepo-com.png | relURL }}">
               The kindergarten
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,7 @@
     </div>
   </div>
   <button class="openbtn d-none d-md-flex flex-column" onclick="openNav()">
-    <img alt="" width="30" src="assets/img/white-letter-block-toy-pngrepo-com.png">>>
+    <img alt="" width="30" src="{{ .netlify/large-media/assets/img/white-letter-block-toy-pngrepo-com.png | relURL }}">>>
   </button>
   {{ partial "services" . }}
 
