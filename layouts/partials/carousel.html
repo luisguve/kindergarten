@@ -10,7 +10,7 @@
         {{ range $idx, $rsc := .Resources.Match "carousel*" }}
         {{/* $image := $rsc.Resize "600x" */}}
         <div class="carousel-item {{if eq $idx 0}}active{{end}} text-center">
-          <img src="/.netlify/large-media{{$rsc.RelPermalink}}?nf_resize=fit&w=600" class="d-inline-block img-fluid" alt="">
+          <img src="{{$rsc.RelPermalink}}?nf_resize=fit&w=600" class="d-inline-block img-fluid" alt="">
         </div>
         {{ end }}
       </div>
