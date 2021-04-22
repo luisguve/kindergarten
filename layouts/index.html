@@ -3,7 +3,7 @@
     <!-- The video -->
     {{ $video := .Resources.GetMatch "video" }}
     <video muted>
-      <source src="{{ $video.Permalink }}" type="video/mp4">
+      <source src="/.netlify/large-media/{{ $video.RelPermalink }}" type="video/mp4">
     </video>
     <div class="overlay">
       <!-- Desktop navbar -->
