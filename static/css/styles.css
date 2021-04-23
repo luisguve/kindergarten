@@ -127,8 +127,9 @@ footer {
 
 .hero {
   width: 100%;
-  overflow: hidden;;
+  overflow: hidden;
   position: relative;
+  z-index: 3;
 }
 
 .hero video {
@@ -187,6 +188,7 @@ footer {
 
 #wwwu ul {
   list-style-type: none;
+  font-size: 1rem;
 }
 
 .activities-grid {
@@ -215,6 +217,33 @@ a.link {
 a.link:hover {
   background-color: var(--accent-1);
   color: #000;
+}
+
+#reviews {
+  background: brown;
+}
+
+#reviews .heading {
+  position: relative;
+}
+#reviews .heading img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: -45px;
+  left: calc(50% - 30px);
+  z-index: 2;
+}
+
+#reviews .left {
+  color: black;
+  background: var(--accent-1-b);
+}
+
+#reviews .right img {
+  height: 70vh;
+  object-fit: cover;
+  object-position: center top;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -247,7 +276,7 @@ a.link:hover {
   .benefits-grid.sidebar-closed {
     /*There is more space; adjust structure of grid*/
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: 0.7fr, 1fr;
+    grid-template-rows: 0.7fr 1fr;
   }
   .activities-grid.sidebar-closed .item-1 {
     grid-row: 1 / span 2;
@@ -265,6 +294,15 @@ a.link:hover {
   .benefits-grid.sidebar-closed .content h1 {
     margin-top: 0;
   }
+  #wwwu ul {
+    font-size: 1.25rem;
+  }
+  #reviews .heading img {
+    width: 75px;
+    height: 75px;
+    bottom: -50px;
+    left: calc(50% - 37.5px);
+  }
 }
 @media screen and (min-width: 992px) {
   .activities-grid {
@@ -275,7 +313,7 @@ a.link:hover {
   .benefits-grid {
     /*There is more space; adjust structure of grid*/
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: 0.7fr, 1fr;
+    grid-template-rows: 0.7fr 1fr;
   }
   .activities-grid .item-1 {
     grid-row: 1 / span 2;
@@ -321,6 +359,12 @@ a.link:hover {
   .benefit .content {
     color: navy;
   }
+  #reviews .heading img {
+    width: 100px;
+    height: 100px;
+    bottom: -55px;
+    left: calc(50% - 50px);
+  }
 }
 @media screen and (min-width: 1200px) {
   .sidebar.open {
@@ -328,6 +372,12 @@ a.link:hover {
   }
   #main.sidebar-open {
     margin-left: 21vw;
+  }
+  #reviews .heading img {
+    width: 110px;
+    height: 110px;
+    bottom: -60px;
+    left: calc(50% - 55px);
   }
 }
 

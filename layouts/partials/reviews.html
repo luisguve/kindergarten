@@ -1,0 +1,36 @@
+<div id="reviews" class="row justify-content-center mx-0 pt-3 pt-lg-4">
+  <div class="col-12 heading">
+    <h1 class="text-center mb-3 mb-md-4 mb-lg-5">These parents trust us</h1>
+    <img src="assets/img/ribbon.png">
+  </div>
+  <div class="col-12 px-0">
+    <div id="reviews-carousel-indicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        {{ range $idx, $rsc := .Resources.Match "review*" }}
+          <button type="button" data-bs-target="#reviews-carousel-indicators" data-bs-slide-to="{{$idx}}" {{if eq $idx 0}}class="active" aria-current="true"{{end}} aria-label="Slide {{add $idx 1}}"></button>
+        {{ end }}
+      </div>
+      <div class="carousel-inner">
+      {{ range $idx, $rsc := .Resources.Match "review*" }}
+        <div class="carousel-item {{if eq $idx 0}}active{{end}}" data-bs-interval="120000">
+          <div class="row mx-0">
+            <div class="col-lg-6 left d-flex flex-column justify-content-center align-items-center px-3 pt-5 pt-lg-0 px-lg-0">
+              <figure class="text-center px-lg-5 mb-0">
+                <blockquote class="blockquote">
+                  <p>{{$rsc.Params.quote}}</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  {{$rsc.Params.name}}
+                </figcaption>
+              </figure>
+            </div>
+            <div class="col-lg-6 right d-flex flex-column justify-content-center px-0">
+              <img src="{{$rsc.Permalink}}" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

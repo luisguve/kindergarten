@@ -1,30 +1,29 @@
-<div id="carousel">
-  <div class="row justify-content-center mx-0 py-5 bg-dark">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        {{ range $idx, $rsc := .Resources.Match "carousel*" }}
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$idx}}" {{if eq $idx 0}}class="active" aria-current="true"{{end}} aria-label="Slide {{add $idx 1}}"></button>
-        {{ end }}
+<div id="carousel" class="row justify-content-center mx-0 py-5">
+  <div class="col-md-10 my-5">
+    <div class="row justify-content-center justify-content-xl-between">
+      <div class="col-lg-6 col-xl-5 d-flex flex-column justify-content-center">
+        <h1 class="pe-lg-3 pe-xl-0">We are professionals and passionate</h1>
       </div>
-      <div class="carousel-inner">
-      {{ range $idx, $rsc := .Resources.Match "carousel*" }}
-        {{ $imageSrc := printf "%s?%s" $rsc.RelPermalink "nf_resize=fit&w=600" }}
-        {{ if $.Site.IsServer }}
-          {{ $imageSrc = ($rsc.Resize "600x").Permalink }}
-        {{ end }}
-        <div class="carousel-item {{if eq $idx 0}}active{{end}} text-center">
-          <img src="{{ $imageSrc }}" class="d-inline-block img-fluid" alt="">
+      <div class="col-lg-6 col-xl-6 d-flex flex-column justify-content-center">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            {{ range $idx, $rsc := .Resources.Match "carousel*" }}
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$idx}}" {{if eq $idx 0}}class="active" aria-current="true"{{end}} aria-label="Slide {{add $idx 1}}"></button>
+            {{ end }}
+          </div>
+          <div class="carousel-inner">
+          {{ range $idx, $rsc := .Resources.Match "carousel*" }}
+            {{ $imageSrc := printf "%s?%s" $rsc.RelPermalink "nf_resize=fit&w=600" }}
+            {{ if $.Site.IsServer }}
+              {{ $imageSrc = ($rsc.Resize "600x").Permalink }}
+            {{ end }}
+            <div class="carousel-item {{if eq $idx 0}}active{{end}} text-center">
+              <img src="{{ $imageSrc }}" class="d-inline-block img-fluid" alt="">
+            </div>
+          {{ end }}
+          </div>
         </div>
-      {{ end }}
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </div>
 </div>

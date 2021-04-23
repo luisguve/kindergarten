@@ -50,5 +50,16 @@ resources:
     src: pexels-lukas-296301.jpg
     params:
       desc: "This is an activity"
+  # Reviews carousel
+  - name: review1
+    src: review-1.jpg
+    params:
+      quote: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+      name: "Jane Doe"
+  - name: review2
+    src: review-2.jpg
+    params:
+      quote: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+      name: "Dane Jones"
 ---
 

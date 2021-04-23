@@ -5,7 +5,7 @@
         <div class="col-lg-6">
           <h1>{{.Params.wwwu.heading}}</h1>
           <p class="fs-5 text-muted">{{.Params.wwwu.content}}</p>
-          <ul class="fs-5">
+          <ul class="ps-0 ps-md-4">
             {{ range .Params.wwwu.benefits }}
             <li>
               <i class="bi bi-check2-circle me-2"></i>{{. | safeHTML}}
