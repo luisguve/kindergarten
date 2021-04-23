@@ -3,11 +3,14 @@
     <div class="col-12 heading mb-5">
       <h1 class="text-center text-dark">Follow us on social media</h1>
     </div>
+    <div class="col d-flex flex-column flex-md-row justify-content-around">
     {{ range .Site.Data.social }}
-    <div class="col d-flex justify-content-center">
-      <a href="{{.link}}" class="text-dark"><i class="{{.icon}}"></i></a>
-    </div>
+      <a href="{{.link}}" class="text-dark d-flex align-items-center mb-3 mb-md-0">
+        <i class="{{.icon}}"></i>
+        <span class="d-inline d-md-none ms-3">{{.desc}}</span>
+      </a>
     {{ end }}
+    </div>
   </div>
   <div class="col-md-10 desc pt-2">
   {{ range .Site.Data.social }}
@@ -17,6 +20,9 @@
 </div>
 
 <style type="text/css">
+  #social a {
+    text-decoration: none;
+  }
   #social i {
     color: black;
     font-size: 50px;
