@@ -9,9 +9,9 @@
     </div>
     {{ end }}
   </div>
-  <div class="col-md-10 desc">
+  <div class="col-md-10 desc pt-2">
   {{ range .Site.Data.social }}
-    <p class="">{{.desc}}</p>
+    <p class="px-4 py-2">{{.desc}}</p>
   {{ end }}
   </div>
 </div>
@@ -26,23 +26,15 @@
   }
   #social .desc {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 180px;
+    justify-content: center;
   }
-
-  {{ range $idx, $p := .Site.Data.social }}
-    {{- $idx = add $idx 1 -}}
-    {{- $start := add $idx 2 -}}
-    {{- $end := $idx -}}
-  #social .desc p:nth-child({{$idx}}) {
-    grid-column: {{$start}} / {{$end}};
-  }
-  {{ end }}
   #social .desc p {
+    grid-column: 1 / 2;
     grid-row: 1 / 2;
     padding: 0 5px;
     text-align: center;
     border: 3px solid var(--accent-1-d);
-    border-radius: 10px;
     font-weight: bolder;
     color: var(--accent-1-d);
     visibility: hidden;
