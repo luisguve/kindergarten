@@ -1,0 +1,50 @@
+<div id="social" class="row justify-content-center mx-0 py-5">
+  <div class="col-md-10 my-3 row">
+    <div class="col-12 heading mb-5">
+      <h1 class="text-center text-dark">Follow us on social media</h1>
+    </div>
+    {{ range .Site.Data.social }}
+    <div class="col d-flex justify-content-center">
+      <a href="{{.link}}" class="text-dark"><i class="{{.icon}}"></i></a>
+    </div>
+    {{ end }}
+  </div>
+  <div class="col-md-10 desc">
+  {{ range .Site.Data.social }}
+    <p class="">{{.desc}}</p>
+  {{ end }}
+  </div>
+</div>
+
+<style type="text/css">
+  #social i {
+    color: black;
+    font-size: 50px;
+  }
+  #social i:hover {
+    color: var(--accent-1-d);
+  }
+  #social .desc {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  {{ range $idx, $p := .Site.Data.social }}
+    {{- $idx = add $idx 1 -}}
+    {{- $start := add $idx 2 -}}
+    {{- $end := $idx -}}
+  #social .desc p:nth-child({{$idx}}) {
+    grid-column: {{$start}} / {{$end}};
+  }
+  {{ end }}
+  #social .desc p {
+    grid-row: 1 / 2;
+    padding: 0 5px;
+    text-align: center;
+    border: 3px solid var(--accent-1-d);
+    border-radius: 10px;
+    font-weight: bolder;
+    color: var(--accent-1-d);
+    visibility: hidden;
+  }
+</style>

@@ -1,0 +1,19 @@
+[
+	{
+		"icon": "fa fa-facebook-square",
+		"link": "https://facebook.com",
+		"desc": "Facebook: The kindergarten"
+	}, {
+		"icon": "fa fa-instagram",
+		"link": "https://instagram.com",
+		"desc": "Instagram: @TheKindergarten"
+	}, {
+		"icon": "fa fa-pinterest-square",
+		"link": "https://pinterest.com",
+		"desc": "Pinterest: @TheKindergarten"
+	}, {
+		"icon": "fa fa-twitter-square",
+		"link": "https://twitter.com",
+		"desc": "Twitter: @TheKindergarten"
+	}
+]

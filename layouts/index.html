@@ -108,6 +108,8 @@
   {{ partial "carousel" . }}
 
   {{ partial "reviews" . }}
+
+  {{ partial "social" . }}
 {{ end }}
 
 {{ define "script" }}
@@ -132,5 +134,14 @@
   $(window).scroll(function() {
     $("nav.desktop").toggleClass("scrolled", $(this).scrollTop() > $(window).height() * 0.50);
   })
+
+  let icons = $("#social i");
+  let descs = $("#social .desc p");
+  icons.each(function(i) {
+    $(this).hover(
+      () => $(descs[i]).css("visibility", "visible"),
+      () => $(descs[i]).css("visibility", "hidden")
+    );
+  });
 </script>
 {{ end }}
