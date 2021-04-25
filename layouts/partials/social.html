@@ -5,16 +5,16 @@
     </div>
     <div class="col d-flex flex-column flex-md-row justify-content-around">
     {{ range .Site.Data.social }}
-      <a href="{{.link}}" class="text-dark d-flex align-items-center mb-3 mb-md-0">
-        <i class="{{.icon}}"></i>
-        <span class="d-inline d-md-none ms-3">{{.desc}}</span>
+      <a href="{{.link}}" class="link d-flex align-items-center mb-3 mb-md-0">
+        <i class="{{.icon}} text-dark"></i>
+        <span class="d-inline d-md-none ms-3">{{.desc | safeHTML}}</span>
       </a>
     {{ end }}
     </div>
   </div>
   <div class="col-md-10 desc pt-2">
   {{ range .Site.Data.social }}
-    <p class="px-4 py-2">{{.desc}}</p>
+    <p class="px-4 py-2">{{.desc | safeHTML}}</p>
   {{ end }}
   </div>
 </div>
@@ -27,8 +27,12 @@
     color: black;
     font-size: 50px;
   }
-  #social i:hover {
-    color: var(--accent-1-d);
+  #social a:hover {
+    color: var(--accent-1-d)!important;
+    background: none!important;
+  }
+  #social a:hover i {
+    color: var(--accent-1-d)!important;
   }
   #social .desc {
     display: grid;

@@ -2,18 +2,18 @@
 	{
 		"icon": "fa fa-facebook-square",
 		"link": "https://facebook.com",
-		"desc": "Facebook: The kindergarten"
+		"desc": "<span class='text-dark'>Facebook:</span> The kindergarten"
 	}, {
 		"icon": "fa fa-instagram",
 		"link": "https://instagram.com",
-		"desc": "Instagram: @TheKindergarten"
+		"desc": "<span class='text-dark'>Instagram:</span> @TheKindergarten"
 	}, {
 		"icon": "fa fa-pinterest-square",
 		"link": "https://pinterest.com",
-		"desc": "Pinterest: @TheKindergarten"
+		"desc": "<span class='text-dark'>Pinterest:</span> @TheKindergarten"
 	}, {
 		"icon": "fa fa-twitter-square",
 		"link": "https://twitter.com",
-		"desc": "Twitter: @TheKindergarten"
+		"desc": "<span class='text-dark'>Twitter:</span> @TheKindergarten"
 	}
 ]

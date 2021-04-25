@@ -39,7 +39,7 @@
 }
 
 .topnav, .sidebar {
-  background-color: var(--accent-1-b);
+  background-color: white;
   color: darkred;
 }
 
@@ -82,7 +82,7 @@ footer {
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  border-right: 2px solid black;
+  border-right: 1px solid #333;
 }
 
 /* The sidebar links */
@@ -163,16 +163,17 @@ footer {
   background: #6b475e;
 }
 
-.reservation form button {
+/*.reservation form button {
   background: var(--accent-2);
 }
 
 .reservation form button:hover {
   background: var(--accent-2-d);
-}
+}*/
 
 .btn.cta {
   background: var(--accent-1-b);
+  color: darkred;
 }
 
 .btn.cta:hover {
@@ -263,6 +264,13 @@ a.link:hover {
 }
 .accent {
   color: var(--accent-1-d);
+  font-weight: bold;
+}
+.accent2 {
+  color: var(--accent-1-b);
+}
+.accent3 {
+  color: darkred;
   font-weight: bold;
 }
 img.showcase {

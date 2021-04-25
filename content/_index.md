@@ -2,7 +2,7 @@
 title: "The Kindergarten"
 date: 2021-04-13T17:32:15-03:00
 draft: false
-heading: Kids are the best explorers in the world
+heading: Kids are the best <span class="accent2">explorers</span> in the world
 subheading: Let them discover the life and feed their creativity
 services:
   heading: Our activities
