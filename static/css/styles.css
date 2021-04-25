@@ -159,7 +159,7 @@ footer {
 }
 
 .reservation {
-  background: #6b475e;
+  background: #100;
 }
 
 .btn.cta {
@@ -282,21 +282,21 @@ img.showcase {
   .navbar.scrolled {
     width: 100%;
   }
-  .activities-grid.sidebar-closed {
+  .activities-grid {
     /*There is more space; adjust structure of grid*/
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: repeat(2, 1fr);
   }
-  .benefits-grid.sidebar-closed {
+  .benefits-grid {
     /*There is more space; adjust structure of grid*/
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: 0.7fr 1fr;
   }
-  .activities-grid.sidebar-closed .item-1 {
+  .activities-grid .item-1 {
     grid-row: 1 / span 2;
     grid-column: 2 / 3;
   }
-  .benefits-grid.sidebar-closed .item-2 {
+  .benefits-grid .item-2 {
     grid-row: 2 / 3;
     grid-column: 1 / span 2;
   }
@@ -304,8 +304,8 @@ img.showcase {
   .benefits-grid .content h1 {
     margin-top: 15px;
   }
-  .activities-grid.sidebar-closed .content h1,
-  .benefits-grid.sidebar-closed .content h1 {
+  .activities-grid .content h1,
+  .benefits-grid .content h1 {
     margin-top: 0;
   }
   #wwwu ul {

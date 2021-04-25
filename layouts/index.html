@@ -42,7 +42,7 @@
       <div class="content">
         <div class="row justify-content-center mx-0 py-2 py-xl-5">
           <div class="col-md-10 my-5">
-            <div class="row flex-column flex-xl-row justify-content-center">
+            <div class="row flex-column flex-xl-row justify-content-center mx-0">
               <div class="col-md-10 col-lg-8 col-xl-7 mt-5 px-3 px-md-1">
                 <div class="text-light">
                   <h1 class="heading me-xl-3 text-light">{{ .Params.heading | safeHTML }}</h1>
@@ -93,13 +93,13 @@
             Email address
             <input type="text" name="email" placeholder="Email" class="w-100 mb-3 py-1">
           </label>
-          <button type="submit" class="btn text-light w-25 px-2 py-1">Send</button>
+          <button type="submit" class="btn btn-primary text-light w-25 px-2 py-1">Send</button>
         </form>
       </div>
     </div>
   </div>
   <div class="container-lg px-0 mb-3 mb-lg-5">
-    <div class="row d-flex bg-content shadow">
+    <div class="row d-flex bg-content shadow mx-0">
       <div class="col-lg-3 px-0">
         {{ partial "top-nav" . }}
       </div>
@@ -122,28 +122,11 @@
 
 {{ define "script" }}
 <script type="text/javascript">
-  /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-  function openNav() {
-    $(".sidebar").addClass("open");
-    $("#main").addClass("sidebar-open");
-    $("nav.desktop").removeClass("vw-100");
-    $(".activities-grid").removeClass("sidebar-closed");
-    $(".benefits-grid").removeClass("sidebar-closed");
-  }
-
-  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-  function closeNav() {
-    $(".sidebar").removeClass("open");
-    $("#main").removeClass("sidebar-open");
-    $("nav.desktop").addClass("vw-100");
-    $(".activities-grid").addClass("sidebar-closed");
-    $(".benefits-grid").addClass("sidebar-closed");
-  }
   $(window).scroll(function() {
     $("nav.desktop").toggleClass("scrolled", $(this).scrollTop() > $(window).height() * 0.50);
   })
 
-  let icons = $("#social i");
+  let icons = $("#social a");
   let descs = $("#social .desc p");
   icons.each(function(i) {
     $(this).hover(

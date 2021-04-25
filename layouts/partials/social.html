@@ -1,6 +1,6 @@
 <div id="social" class="row justify-content-center mx-0 pt-5 pb-2">
-  <div class="col-md-10 my-3 row">
-    <div class="col-12 heading mb-5">
+  <div class="col-md-10 my-3 row mx-0">
+    <div class="col-12 heading mb-3 mb-lg-5">
       <h1 class="text-center text-dark">Follow us on social media</h1>
     </div>
     <div class="col d-flex flex-column flex-md-row justify-content-around">
@@ -12,7 +12,7 @@
     {{ end }}
     </div>
   </div>
-  <div class="col-md-10 desc pt-2">
+  <div class="col-md-10 desc pt-2 d-none d-lg-block">
   {{ range .Site.Data.social }}
     <p class="px-4 py-2">{{.desc | safeHTML}}</p>
   {{ end }}
