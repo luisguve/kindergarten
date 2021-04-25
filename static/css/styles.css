@@ -39,7 +39,8 @@
 }
 
 .topnav, .sidebar {
-  background-color: var(--secondary);
+  background-color: var(--accent-1-b);
+  color: darkred;
 }
 
 body {
@@ -81,6 +82,7 @@ footer {
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  border-right: 2px solid black;
 }
 
 /* The sidebar links */
@@ -263,7 +265,15 @@ a.link:hover {
   color: var(--accent-1-d);
   font-weight: bold;
 }
+img.showcase {
+  height: 280px;
+  object-fit: cover;
+  object-position: center top;
+}
 @media screen and (min-width: 768px) {
+  img.showcase {
+    height: auto;
+  }
   .reservation {
     background: rgba(0,0,0,0.5);
     border-radius: 5px;
