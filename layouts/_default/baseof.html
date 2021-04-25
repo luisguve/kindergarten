@@ -15,13 +15,12 @@
     <link rel="icon" type="image/png" href="assets/img/letter-block-toy-pngrepo-com.png">
   </head>
   <body>
-    <div class="container-fluid px-0">
-      {{ partial "top-nav" . }}
-      <div id="main" class="sidebar-open">
-        {{ partial "nav" . }}
+    <div class="container-fluid px-0 bg-tenue">
+      {{ partial "nav" . }}
 
-        {{ block "main" . }} {{/* No default main */}} {{ end }}
+      {{ block "main" . }} {{/* No default main */}} {{ end }}
 
+      <div class="d-flex">
         {{ partial "footer-nav" . }}
         {{ partial "footer" . }}
       </div>

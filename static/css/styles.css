@@ -60,11 +60,11 @@ body {
 }
 
 .footer-nav {
-  background-color: var(--primary-1-d);
+  background-color: brown;
 }
 
 footer {
-  background-color: var(--primary-1-dd);
+  background-color: #5d1818;
 }
 
 .logo-container {
@@ -74,15 +74,14 @@ footer {
 /* The sidebar menu */
 .sidebar {
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 6; /* Stay on top */
-  top: 0;
-  left: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
+  position: relative;
   padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-  border-right: 1px solid #333;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar .content {
+  position: sticky;
+  top: 100px;
 }
 
 /* The sidebar links */
@@ -162,14 +161,6 @@ footer {
 .reservation {
   background: #6b475e;
 }
-
-/*.reservation form button {
-  background: var(--accent-2);
-}
-
-.reservation form button:hover {
-  background: var(--accent-2-d);
-}*/
 
 .btn.cta {
   background: var(--accent-1-b);
@@ -258,10 +249,6 @@ a.link:hover {
   object-position: center;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s; /* If you want a transition effect */
-}
 .accent {
   color: var(--accent-1-d);
   font-weight: bold;
@@ -278,6 +265,12 @@ img.showcase {
   object-fit: cover;
   object-position: center top;
 }
+.bg-tenue {
+  background: #eee;
+}
+.bg-content {
+  background: white;
+}
 @media screen and (min-width: 768px) {
   img.showcase {
     height: auto;
@@ -286,14 +279,8 @@ img.showcase {
     background: rgba(0,0,0,0.5);
     border-radius: 5px;
   }
-  .sidebar.open {
-    width: 250px;
-  }
-  #main.sidebar-open {
-    margin-left: 250px;
-  }
   .navbar.scrolled {
-    width: calc(100vw - 250px);
+    width: 100%;
   }
   .activities-grid.sidebar-closed {
     /*There is more space; adjust structure of grid*/
@@ -397,12 +384,6 @@ img.showcase {
   }
 }
 @media screen and (min-width: 1200px) {
-  .sidebar.open {
-    width: 21vw;
-  }
-  #main.sidebar-open {
-    margin-left: 21vw;
-  }
   #reviews .heading img {
     width: 110px;
     height: 110px;

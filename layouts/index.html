@@ -98,20 +98,26 @@
       </div>
     </div>
   </div>
-  <button class="openbtn d-none d-md-flex flex-column" onclick="openNav()">
-    <img alt="" width="30" src="assets/img/white-letter-block-toy-pngrepo-com.png">>>
-  </button>
-  {{ partial "services" . }}
+  <div class="container-lg px-0 mb-3 mb-lg-5">
+    <div class="row d-flex bg-content shadow">
+      <div class="col-lg-3 px-0">
+        {{ partial "top-nav" . }}
+      </div>
+      <div id="main" class="col-lg-9 px-0">
+        {{ partial "services" . }}
 
-  {{ partial "wwwu" . }} {{/* Why work with us? */}}
+        {{ partial "wwwu" . }} {{/* Why work with us? */}}
 
-  {{ partial "carousel" . }}
+        {{ partial "carousel" . }}
 
-  {{ partial "reviews" . }}
+        {{ partial "reviews" . }}
 
-  {{ partial "social" . }}
+        {{ partial "social" . }}
 
-  {{ partial "newsletter" . }}
+        {{ partial "newsletter" . }}
+      </div>
+    </div>
+  </div>
 {{ end }}
 
 {{ define "script" }}
