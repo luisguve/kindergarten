@@ -13,10 +13,10 @@ wwwu:
   heading: The benefits of our kindergarten
   content: We are professionals and passionate about teaching the little ones the fundamental scholar concepts and helping them to give their first steps toward developing their creativity and vision about the life.
   benefits:
-    - We provide <span class="accent">safety</span>
-    - Our environment facilitates <span class="accent">learning</span>
-    - We are <span class="accent">professional</span>
-    - We are <span class="accent">passionate</span> about teaching
+    - We provide <a href="/about" class="link px-0">safety</a>
+    - Our environment facilitates <a href="/about" class="link px-0">learning</a>
+    - We are <a href="/about" class="link px-0">professional</a>
+    - We are <a href="/about" class="link px-0">passionate</a> about teaching
 resources:
   - name: video
     src: pexels-video-1580507.mp4
@@ -61,5 +61,7 @@ resources:
     params:
       quote: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
       name: "Dane Jones"
+  - name: newsletter
+    src: carousel4.jpg
 ---
 

@@ -2,20 +2,20 @@
   <div class="row justify-content-center mx-0 py-5">
     <div class="col-md-10 my-5">
       <div class="row justify-content-between">
-        <div class="col-lg-6 pe-xl-4 mb-5 mb-xl-0">
-          <h1 class="mb-5 mb-lg-4">{{.Params.services.heading}}</h1>
+        <div class="col-lg-6 px-0 px-md-2 pe-xl-4 mb-5 mb-xl-0">
+          <h1 class="ms-3 ms-md-0 mb-2 mb-lg-4">{{.Params.services.heading}}</h1>
           <div class="activities-grid mb-2">
           {{ range $idx, $rsc := .Resources.Match "activity*" }}
           {{$imageSrc := printf "%s?%s" $rsc.RelPermalink "nf_resize=fit&w=400"}}
           {{ if $.Site.IsServer }}
             {{ $imageSrc = ($rsc.Resize "400x").Permalink }}
           {{ end }}
-            <div class="activity item-{{$idx}} mb-4 mb-md-0 d-flex flex-column-reverse d-lg-block">
+            <div class="activity item-{{$idx}} mt-4 mt-md-0 d-flex flex-column-reverse d-lg-block">
               <img src="{{ $imageSrc }}" class="img-fluid">
               <div class="overlay">
                 <div class="content w-100">
-                  <h1 class="fs-5 mb-1">{{$rsc.Title}}</h1>
-                  <p class="small mb-1">{{$rsc.Params.desc}}</p>
+                  <h1 class="fs-5 ms-3 ms-md-0 mb-1 text-start text-md-center">{{$rsc.Title}}</h1>
+                  <p class="small ms-3 ms-md-0 mb-1 text-start text-md-center">{{$rsc.Params.desc}}</p>
                 </div>
               </div>
             </div>

@@ -13,9 +13,9 @@
       <div class="carousel-inner">
       {{ range $idx, $rsc := .Resources.Match "review*" }}
         <div class="carousel-item {{if eq $idx 0}}active{{end}}" data-bs-interval="120000">
-          <div class="row mx-0">
+          <div class="row mx-0 justify-content-between">
             <div class="col-lg-6 left d-flex flex-column justify-content-center align-items-center px-3 pt-5 pt-lg-0 px-lg-0">
-              <figure class="text-center px-lg-5 mb-0">
+              <figure class="text-center px-lg-5 mx-lg-4 mx-xl-5 mb-0">
                 <blockquote class="blockquote">
                   <p>{{$rsc.Params.quote}}</p>
                 </blockquote>
